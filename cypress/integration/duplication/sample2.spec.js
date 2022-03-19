@@ -9,7 +9,7 @@ describe('Code duplication bad practice - Sample 2', () => {
     cy.wait('@getStories')
   })
 
-  const terms = ['reactjs', 'vuejs']
+  const terms = ['reactjs', 'vuejs','angularjs']
   terms.forEach(term => {
     it('searches for "${term}"', () => {
       cy.search(term )  
