@@ -2,11 +2,12 @@ describe('Flaky tests bad practice', () => {
   beforeEach(() => {
     cy.intercept(
       'GET',
-      '**/search**'
+      '**/search**',
+      { fixture: "stories"} // isolando uma api externa - extracredit 1
     ).as('getStories')
 
     cy.visit('https://wlsf82-hacker-stories.web.app')
-    cy.wait('@getStories')
+    // cy.wait('@getStories') // extra crdit 2 - removendo pq o cypress já espera as requisições
 
   })
 
@@ -18,7 +19,7 @@ describe('Flaky tests bad practice', () => {
         cy.search(faker.random.word())
       })
 
-      cy.wait('@getStories')
+     // cy.wait('@getStories') // extra crdit 2 - removendo pq o cypress já espera as requisições
 
       cy.get('.last-searches button')
         .should('have.length', 5)
