@@ -21,7 +21,7 @@ describe('Unnecessary waiting bad practice', () => {
       .type(info.description)
     cy.get('input[type="submit"]')
       .click()
-    cy.wait(3000)
+    //cy.wait(3000)  // É uma espera desnecessária não é preciso está aqui. O cypress já sabe esperar
 
     cy.url()
       .should(
