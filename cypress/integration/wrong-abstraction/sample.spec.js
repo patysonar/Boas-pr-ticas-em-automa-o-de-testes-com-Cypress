@@ -13,20 +13,35 @@ describe('Wrong abstraction bad practice', () => {
     cy.search('cypress')
     cy.wait('@getStories')
 
-    cy.assertResults()
+    //--verificação explicita - má prática
+    // cy.get('.table-row').then(rows => {
+    //   expect(rows.length).to.be.at.least(1) 
+    // })
+      //// Boa pratica implicita
+    cy.get('.table-row').its('length').should('be.at.least', 1)  // modificando a verificação para que ela seja  implícita
   })
 
   it('uses custom command for assertion just for the sake of reusability', () => {
     cy.search('selenium')
     cy.wait('@getStories')
 
-    cy.assertResults()
+    //--verificação explicita - má prática
+    // cy.get('.table-row').then(rows => {
+    //   expect(rows.length).to.be.at.least(1) 
+    // })
+      //// Boa pratica implicita
+    cy.get('.table-row').its('length').should('be.at.least', 1)  // modificando a verificação para que ela seja  implícita
   })
 
   it('uses custom command for assertion just for the sake of reusability', () => {
     cy.search('playwright')
     cy.wait('@getStories')
 
-    cy.assertResults()
+    //--verificação explicita - má prática
+    // cy.get('.table-row').then(rows => {
+    //   expect(rows.length).to.be.at.least(1) 
+    // })
+    //// Boa pratica implicita
+    cy.get('.table-row').its('length').should('be.at.least', 1)  // modificando a verificação para que ela seja  implícita
   })
 })

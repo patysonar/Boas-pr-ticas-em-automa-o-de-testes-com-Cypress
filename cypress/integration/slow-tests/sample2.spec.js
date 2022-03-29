@@ -2,7 +2,7 @@ describe('Slow tests bad practice - Sample 2', () => {
   it('does not enable signup on different passwords', () => {
     cy.visit('https://notes-serverless-app.com/signup')
 
-    // cy.contains('.btn', 'Signup')
+    // cy.contains('.btn', 'Signup')//pode excluir
     //   .click()
 
     cy.get('#email').type('joe@example.com')

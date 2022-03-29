@@ -5,11 +5,11 @@ Cypress.Commands.add('search', term => {
     .type(`${term}{enter}`)
 })
 
-Cypress.Commands.add('assertResults', () => {
-  cy.get('.table-row').then(rows => {
-    expect(rows.length).to.be.at.least(1)
-  })
-})
+// Cypress.Commands.add('assertResults', () => {  
+//   cy.get('.table-row').then(rows => {  // estas dua linhas foram inseridas no wrong-abstration-> sample.spes.js
+//     expect(rows.length).to.be.at.least(1)  // wrong-abstration-> sample.spes.js substituindo:    cy.assertResults()
+//   })
+// })
 
 Cypress.Commands.add('updateDestination', data => {
 
